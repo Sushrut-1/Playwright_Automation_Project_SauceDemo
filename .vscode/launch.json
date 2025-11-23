@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // This is the configuration needed to debug your Cucumber tests.
+        // It connects to the Node.js inspector launched via 'npm run debug:all'.
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Cucumber Debugger",
+            "port": 9229, // Node.js default debug port
+            "restart": true
+        },
+        // You can keep the default "Launch Program" for single file debugging,
+        // but it must be placed correctly with a comma separating configurations.
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}"
+        }
+    ]
+}

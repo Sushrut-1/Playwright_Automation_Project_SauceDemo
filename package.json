@@ -1,0 +1,39 @@
+{
+  "name": "playwright_bdd_framework_with_javascript",
+  "version": "1.0.0",
+  "description": "Playwright BDD Automation Framework using Cucumber + JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js tests/features --require tests/steps --format progress",
+
+    "test:regression": "cucumber-js tests/features --require tests/steps --format progress --tags \"@Regression\"",
+    "test:smoke": "cucumber-js tests/features --require tests/steps --format progress --tags \"@Smoke\"",
+
+    "test:login": "cucumber-js tests/features/Login.feature --require tests/steps --format progress",
+    "test:sorting": "cucumber-js tests/features/ProductSorting.feature --require tests/steps --format progress",
+    "test:cart": "cucumber-js tests/features/Cart.feature --require tests/steps --format progress",
+    "test:checkout": "cucumber-js tests/features/Checkout.feature --require tests/steps --format progress",
+    "test:productDetails": "cucumber-js tests/features/ProductDetails.feature --require tests/steps --format progress",
+
+    "test:product_tag": "cucumber-js tests/features --require tests/steps --format progress --tags \"@ProductSorting\"",
+    "test:addToCart": "cucumber-js tests/features --require tests/steps --format progress --tags \"@AddToCart\"",
+
+    "debug:login": "node --inspect-brk ./node_modules/.bin/cucumber-js tests/features/Login.feature --require tests/steps",
+    "debug:all": "node --inspect-brk ./node_modules/.bin/cucumber-js tests/features --require tests/steps"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "bdd",
+    "automation",
+    "testing",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1"
+  }
+}
